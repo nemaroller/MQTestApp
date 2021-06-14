@@ -15,7 +15,7 @@ namespace MQTestApp.Controllers
         [HttpGet]
         public IEnumerable<MQData> Get()
         {
-            return new List<MQData>(){
+            var t= new List<MQData>(){
                  new MQData("2021-06-15T12:35:38.427-05:00",  7),
                  new MQData("2021-06-16T12:35:38.427-05:00",4),
                  new MQData("2021-06-17T12:35:38.427-05:00",1),
@@ -26,6 +26,8 @@ namespace MQTestApp.Controllers
                  new MQData("2021-06-22T12:35:38.427-05:00",8),
                  new MQData("2021-06-23T12:35:38.427-05:00",10),
                  new MQData("2021-06-24T12:35:38.427-05:00",7)};
+
+            return t;
         }
     }
 
@@ -33,8 +35,8 @@ namespace MQTestApp.Controllers
 
     public class MQData {
 
-        string Date {get;set;}
-        int Value {get;set;}
+        public string Date {get;set;}
+        public int Value {get;set;}
 
         public MQData(string date, int value) {
             Date = date;
